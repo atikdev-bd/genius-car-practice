@@ -19,6 +19,7 @@ const AuthProvider = ({children}) => {
 /// sign in email and password ///
 
 const login = (email, password) =>{
+    setLoading(true)
     return signInWithEmailAndPassword(auth , email, password)
 }
 
@@ -26,6 +27,7 @@ const login = (email, password) =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
             console.log(currentUser);
             setUser(currentUser);
+            setLoading(false)
         });
 
         return () =>{
