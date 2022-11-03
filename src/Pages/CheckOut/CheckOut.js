@@ -41,6 +41,7 @@ const CheckOut = () => {
         form.reset()
       })
       .catch((error) => {
+        toast.error({error})
         console.error(error);
       });
   };
